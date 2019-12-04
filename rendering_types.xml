@@ -140,6 +140,8 @@
 	<type tag="foot" value="permissive" minzoom="13" additional="true" poi="false"/>
 	<type tag="foot" value="destination" minzoom="13" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="highway" from_value="path" if_tag1="foot" if_value1="designated" to_tag1="highway" to_value1="footway"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="bridleway" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaynarrow"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="track" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaywide"/>
 	<type tag="foot" value="customers" minzoom="13" additional="true" poi="false"/>
 	<type tag="bicycle" value="no" minzoom="13" additional="true" poi="false"/>
 	<type tag="bicycle" value="yes" minzoom="13" additional="true" poi="false"/>
@@ -1618,6 +1620,8 @@
 		<entity_convert pattern="tag_transform" from_tag="handrail:both" from_value="yes" to_tag1="handrail" to_value1="yes"/>
 		<entity_convert pattern="tag_transform" from_tag="step.condition" to_tag1="step:condition" map="no"/>
 		<type tag="highway" value="bridleway" minzoom="12" nameTags="ref"/>
+		<type tag="highway" value="bridlewaynarrow" minzoom="12" nameTags="ref"/>
+		<type tag="highway" value="bridlewaywide" minzoom="12" nameTags="ref"/>
 		<type tag="highway" value="services" minzoom="12" nameTags="ref"/>
 		<type tag="highway" value="raceway" minzoom="12" nameTags="ref"/>
 		<type tag="highway" value="escape" minzoom="12" nameTags="ref"/>
