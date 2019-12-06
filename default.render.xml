@@ -488,7 +488,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#a01060">
 			<apply_if nightMode="true" attrColorValue="#a01060"/>
 		</case>
-		<case attrColorValue="#f27349">
+		<case attrColorValue="#dd9f9f">
 			<apply_if nightMode="true" attrColorValue="#af574f"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -547,7 +547,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#c00828">
 			<apply_if nightMode="true" attrColorValue="#c00828"/>
 		</case>
-		<case attrColorValue="#ffa347">
+		<case attrColorValue="#dd9f9f">
 			<apply_if nightMode="true" attrColorValue="#b88165"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -597,7 +597,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#ff8000">
 			<apply_if nightMode="true" attrColorValue="#ff8000"/>
 		</case>
-		<case attrColorValue="#f5e85b">
+		<case attrColorValue="#f9d6aa">
 			<apply_if nightMode="true" attrColorValue="#CCB77A"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -645,7 +645,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#f0c810">
 			<apply_if nightMode="true" attrColorValue="#f0c810"/>
 		</case>
-		<case attrColorValue="#ffffff">
+		<case attrColorValue="#f8f8ba">
 			<apply_if additional="construction=yes" attrColorValue="#D6CF2A"/>
 			<apply_if nightMode="true" attrColorValue="#37555c"/>
 		</case>
@@ -718,7 +718,7 @@
 		<case roadStyle="boldOutline" attrColorValue="#99666666">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#ffffff">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -1517,7 +1517,7 @@
 	<renderingAttribute name="farmyardColor">
 		<case nightMode="true" attrColorValue="#004333"/>
 		<case moreDetailed="true" attrColorValue="#E4D0B3"/>
-		<case attrColorValue="#ddbf92"/>
+		<case attrColorValue="#EFD6B5"/>
 	</renderingAttribute>
 	<renderingAttribute name="greenfieldColor">
 		<case moreDetailed="true" attrColorValue="#BDC88C"/>
@@ -1532,7 +1532,7 @@
 		<case attrColorValue="#94d77b"/>
 	</renderingAttribute>
 	<renderingAttribute name="heathColor">
-		<case attrColorValue="#d7ebba"/>
+		<case attrColorValue="#E6E8C5"/>
 	</renderingAttribute>
 	<renderingAttribute name="meadowColor">
 		<case nightMode="true" attrColorValue="$woodColor"/>
