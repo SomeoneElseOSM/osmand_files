@@ -488,7 +488,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#a01060">
 			<apply_if nightMode="true" attrColorValue="#a01060"/>
 		</case>
-		<case attrColorValue="#dd9f9f">
+		<case attrColorValue="#f27349">
 			<apply_if nightMode="true" attrColorValue="#af574f"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -547,7 +547,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#c00828">
 			<apply_if nightMode="true" attrColorValue="#c00828"/>
 		</case>
-		<case attrColorValue="#dd9f9f">
+		<case attrColorValue="#ffa347">
 			<apply_if nightMode="true" attrColorValue="#b88165"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -597,7 +597,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#ff8000">
 			<apply_if nightMode="true" attrColorValue="#ff8000"/>
 		</case>
-		<case attrColorValue="#f9d6aa">
+		<case attrColorValue="#f5e85b">
 			<apply_if nightMode="true" attrColorValue="#CCB77A"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -645,7 +645,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#f0c810">
 			<apply_if nightMode="true" attrColorValue="#f0c810"/>
 		</case>
-		<case attrColorValue="#f8f8ba">
+		<case attrColorValue="#ffffff">
 			<apply_if additional="construction=yes" attrColorValue="#D6CF2A"/>
 			<apply_if nightMode="true" attrColorValue="#37555c"/>
 		</case>
@@ -718,7 +718,7 @@
 		<case roadStyle="boldOutline" attrColorValue="#99666666">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#ffffff">
+		<case attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -993,8 +993,8 @@
 		</case>
 	</renderingAttribute>
 	<renderingAttribute name="pathColor">
-		<case attrColorValue="#33000000">
-			<apply_if nightMode="true" attrColorValue="#26ffffff"/>
+		<case attrColorValue="$footwayColor">
+			<apply_if nightMode="true" attrColorValue="$footwayColor"/>
 		</case>
 	</renderingAttribute>
 	<renderingConstant name="pathStrokeWidth" value="1.5"/>
@@ -1010,7 +1010,7 @@
 	<renderingConstant name="sacScaleColorT5" value="#6000ff"/>
 	<renderingConstant name="sacScaleColorT6" value="#6000ff"/>
 	<renderingAttribute name="bridlewayColor">
-		<case attrColorValue="#0080FF">
+		<case attrColorValue="#339900">
 			<apply_if nightMode="true" attrColorValue="#339900"/>
 		</case>
 	</renderingAttribute>
@@ -1517,7 +1517,7 @@
 	<renderingAttribute name="farmyardColor">
 		<case nightMode="true" attrColorValue="#004333"/>
 		<case moreDetailed="true" attrColorValue="#E4D0B3"/>
-		<case attrColorValue="#EFD6B5"/>
+		<case attrColorValue="#ddbf92"/>
 	</renderingAttribute>
 	<renderingAttribute name="greenfieldColor">
 		<case moreDetailed="true" attrColorValue="#BDC88C"/>
@@ -1532,7 +1532,7 @@
 		<case attrColorValue="#94d77b"/>
 	</renderingAttribute>
 	<renderingAttribute name="heathColor">
-		<case attrColorValue="#E6E8C5"/>
+		<case attrColorValue="#d7ebba"/>
 	</renderingAttribute>
 	<renderingAttribute name="meadowColor">
 		<case nightMode="true" attrColorValue="$woodColor"/>
@@ -1968,13 +1968,11 @@
 		<case tag="highway" value="residential" attrColorValue="#C1B9D1" attrStringValue="highway_class_street"/>
 		<case tag="highway" value="living_street" attrColorValue="#C1B9D1" attrStringValue="highway_class_street"/>
 		<case tag="highway" value="service" attrColorValue="#E3DAF6" attrStringValue="highway_class_service"/>
-		<case tag="highway" value="pedestrian" attrColorValue="$pathColor" attrStringValue="highway_class_footway"/>
+		<case tag="highway" value="pedestrian" attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
 		<case tag="highway" value="road" attrStringValue="highway_class_undefined"/>
-		<case tag="highway" value="footway"  attrColorValue="$pathColor" attrStringValue="highway_class_footway"/>
-		<case tag="highway" value="bridleway" attrColorValue="$pathColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="bridlewaynarrow" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="bridlewaywide" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="steps" attrColorValue="$pathColor" attrStringValue="highway_class_steps"/>
+		<case tag="highway" value="footway"  attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
+		<case tag="highway" value="bridleway" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
+		<case tag="highway" value="steps" attrColorValue="$footwayColor" attrStringValue="highway_class_steps"/>
 		<case tag="highway" value="path" attrColorValue="$pathColor" attrStringValue="highway_class_path"/>
 		<case tag="highway" value="cycleway" attrColorValue="$cyclewayColor" attrStringValue="highway_class_cycleway"/>
 	</renderingAttribute>
@@ -3368,12 +3366,6 @@
 								<apply_if additional="footway=crossing" order="85"/>
 							</case>
 							<case tag="highway" value="bridleway" order="53">
-								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
-							</case>
-							<case tag="highway" value="bridlewaynarrow" order="53">
-								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
-							</case>
-							<case tag="highway" value="bridlewaywide" order="53">
 								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
 							</case>
 							<apply_if layer="1" maxzoom="15" order="20"/>
@@ -5491,10 +5483,6 @@
 						<case tag="highway" value="path" nameTag="ref" textOrder="193"/>
 						<case tag="highway" value="bridleway" nameTag="" textOrder="195"/>
 						<case tag="highway" value="bridleway" nameTag="ref" textOrder="195"/>
-						<case tag="highway" value="bridlewaynarrow" nameTag="" textOrder="195"/>
-						<case tag="highway" value="bridlewaynarrow" nameTag="ref" textOrder="195"/>
-						<case tag="highway" value="bridlewaywide" nameTag="" textOrder="195"/>
-						<case tag="highway" value="bridlewaywide" nameTag="ref" textOrder="195"/>
 						<case tag="highway" value="via_ferrata"/>
 						<apply>
 							<case nameTag="" nameTag2="ref"/>
@@ -10361,7 +10349,7 @@
 			</apply_if>
 		</switch>
 
-		<case minzoom="15" tag="highway" value="footway" additional="footway=crossing" strokeWidth="0.1" color_5="$pathColor"> <!-- this code is here because we do not want surfaces,surfaceGrade and access on crossings -->
+		<case minzoom="15" tag="highway" value="footway" additional="footway=crossing" strokeWidth="0.1" color_5="$footwayColor"> <!-- this code is here because we do not want surfaces,surfaceGrade and access on crossings -->
 			<case maxzoom="16" strokeWidth_5="0.5"/>
 			<case maxzoom="17" strokeWidth_5="1"/>
 			<case minzoom="18" color="#ffffff" color__1="#77555555">
@@ -10889,7 +10877,7 @@
 						</apply_if>
 					</case>
 
-					<case minzoom="12" tag="highway" value="footway" color_5="$pathColor">
+					<case minzoom="12" tag="highway" value="footway" color_5="$footwayColor">
 						<case baseAppMode="bicycle" minzoom="14" additional="bicycle=designated" color_5="$cyclewayColor" pathEffect_5="4_2" strokeWidth_5="1:1"/>
 						<switch minzoom="12" maxzoom="15">
 							<case moreDetailed="true">
@@ -10928,7 +10916,7 @@
 						</case>
 						<case maxzoom="15" disable="true"/>
 						<case minzoom="16" strokeWidth_4="2:2" strokeWidth_5="2:2"/>
-						<apply color_5="$pathColor" pathEffect_5="1_2"/>
+						<apply color_5="$footwayColor" pathEffect_5="1_2"/>
 						<apply_if additional="conveying=yes" pathEffect_5="2_1"/>
 					</case>
 
@@ -10943,42 +10931,6 @@
 							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
 						</case>
 						<case minzoom="16" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
-							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
-						</case>
-						<apply color_5="$pathColor" pathEffect_5="4_2"/>
-					</case>
-
-					<case minzoom="12" tag="highway" value="bridlewaynarrow">
-						<case baseAppMode="pedestrian" minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1:1"/>
-						<case horseRoutes="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="1.5" strokeWidth_5="1.3"/>
-							<case minzoom="13" strokeWidth_4="1.8:1.8" strokeWidth_5="1.7"/>
-						</case>
-						<case moreDetailed="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="0.9" strokeWidth_5="0.8"/>
-							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
-						</case>
-						<case minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
-							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
-						</case>
-						<apply color_5="$bridlewayColor" pathEffect_5="4_2"/>
-					</case>
-
-					<case minzoom="12" tag="highway" value="bridlewaywide">
-						<case baseAppMode="pedestrian" minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1:1"/>
-						<case horseRoutes="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="1.5" strokeWidth_5="1.3"/>
-							<case minzoom="13" strokeWidth_4="1.8:1.8" strokeWidth_5="1.7"/>
-						</case>
-						<case moreDetailed="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="0.9" strokeWidth_5="0.8"/>
-							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
-						</case>
-						<case minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
 							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
 							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
 							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
@@ -12058,4 +12010,290 @@
 					</switch>
 					<switch>
 						<case additional="mtb:scale=0" color="$cycleRouteMtbScale0Color">
-					
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale0UnrecommendedColor"/>
+						</case>
+						<case additional="mtb:scale=1" color="$cycleRouteMtbScale1Color">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale1UnrecommendedColor"/>
+						</case>
+						<case additional="mtb:scale=2" color="$cycleRouteMtbScale2Color">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale2UnrecommendedColor"/>
+						</case>
+						<case additional="mtb:scale=3" color="$cycleRouteMtbScale3Color">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale3UnrecommendedColor"/>
+						</case>
+						<case additional="mtb:scale=4" color="$cycleRouteMtbScale4Color" color_2="$cycleRouteMtbScale4AdditionalColor">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale4UnrecommendedColor" color_2="$cycleRouteMtbScale4AdditionalUnrecommendedColor"/>
+							<apply_if maxzoom="14" pathEffect_2="0_16_3_9"/>
+							<apply_if minzoom="15" pathEffect_2="0_28_4_8"/>
+						</case>
+						<case additional="mtb:scale=5" color="$cycleRouteMtbScale4Color" color_2="$cycleRouteMtbScale4AdditionalColor">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale4UnrecommendedColor" color_2="$cycleRouteMtbScale4AdditionalUnrecommendedColor"/>
+							<apply_if maxzoom="14" pathEffect_2="0_16_3_3_3_3"/>
+							<apply_if minzoom="15" pathEffect_2="0_26_4_4_4_2"/>
+						</case>
+						<case additional="mtb:scale=6" color="$cycleRouteMtbScale4Color" color_2="$cycleRouteMtbScale4AdditionalColor">
+							<apply_if additional="class:bicycle:mtb=-1" color="$cycleRouteMtbScale4UnrecommendedColor" color_2="$cycleRouteMtbScale4AdditionalUnrecommendedColor"/>
+							<apply_if maxzoom="14" pathEffect_2="0_16_9_3"/>
+							<apply_if minzoom="15" pathEffect_2="0_26_14"/>
+						</case>
+					</switch>
+				</apply>
+				<apply>
+					<switch minzoom="13">
+						<case additional="mtb:scale:uphill=1">
+							<case maxzoom="14" pathEffect_3="1_27"/>
+							<case minzoom="15" pathEffect_3="2_38"/>
+						</case>
+						<case additional="mtb:scale:uphill=2">
+							<case maxzoom="14" pathEffect_3="1_2_1_24"/>
+							<case minzoom="15" pathEffect_3="2_2_2_34"/>
+						</case>
+						<case additional="mtb:scale:uphill=3">
+							<case maxzoom="14" pathEffect_3="1_2_1_2_1_21"/>
+							<case minzoom="15" pathEffect_3="2_2_2_2_2_30"/>
+						</case>
+						<case additional="mtb:scale:uphill=4">
+							<case maxzoom="14" pathEffect_3="1_2_1_2_1_2_1_18"/>
+							<case minzoom="15" pathEffect_3="2_2_2_2_2_2_2_26"/>
+						</case>
+						<case additional="mtb:scale:uphill=5">
+							<case maxzoom="14" pathEffect_3="1_2_1_2_1_2_1_2_1_15"/>
+							<case minzoom="15" pathEffect_3="2_2_2_2_2_2_2_2_2_22"/>
+						</case>
+						<apply color_3="#000000">
+							<apply_if maxzoom="16" strokeWidth_3="2:2"/>
+							<apply_if minzoom="17" strokeWidth_3="3.5:3.5"/>
+						</apply>
+					</switch>
+				</apply>
+				<apply>
+					<switch minzoom="13">
+						<case additional="class:bicycle:mtb=1"/>
+						<case additional="class:bicycle:mtb=2"/>
+						<case additional="class:bicycle:mtb=3"/>
+						<apply color__2="$classBicycleMtbColor"/>
+					</switch>
+				</apply>
+			</case>
+			<apply_if showCycleRoutes="true">
+				<switch>
+					<case additional="network=lcn" color="$cycleRoutelcnColor"/>
+					<case additional="network=rcn" color="$cycleRoutercnColor"/>
+					<case additional="network=ncn" color="$cycleRoutencnColor"/>
+					<case additional="network=icn" color="$cycleRouteicnColor"/>
+					<apply >
+						<case maxzoom="11" strokeWidth="1:1"/>
+						<case maxzoom="12" strokeWidth="2:2"/>
+						<case maxzoom="13" strokeWidth="3:3"/>
+						<case maxzoom="14" strokeWidth="4:4"/>
+						<case maxzoom="15" strokeWidth="4:4"/>
+						<case maxzoom="16" strokeWidth="5:5"/>
+						<case maxzoom="17" strokeWidth="6:6"/>
+						<case minzoom="18" strokeWidth="7:7"/>
+					</apply>
+				</switch>
+			</apply_if>
+		</switch>
+
+		<switch>
+			<switch hikingRoutesOSMC="walkingRoutesOSMC" minzoom="12" color="$osmcDefaultColor">
+				<case tag="route_hiking" value=""/>
+				<case tag="route_foot" value=""/>
+				<case tag="route_walking" value=""/>
+			</switch>
+			<switch horseRoutes="true" minzoom="12" color="$horseRouteDefaultColor">
+				<case tag="route_horse" value=""/>
+			</switch>
+			<apply>
+				<case additional="osmc_waycolor=black" color="$osmcBlackColor"/>
+				<case additional="osmc_waycolor=blue" color="$osmcBlueColor"/>
+				<case additional="osmc_waycolor=green" color="$osmcGreenColor"/>
+				<case additional="osmc_waycolor=orange" color="$osmcOrangeColor"/>
+				<case additional="osmc_waycolor=red" color="$osmcRedColor"/>
+				<case additional="osmc_waycolor=yellow" color="$osmcYellowColor"/>
+				<case additional="osmc_waycolor=brown" color="$osmcBrownColor"/>
+				<case additional="osmc_waycolor=purple" color="$osmcPurpleColor"/>
+			</apply>
+			<apply_if minzoom="12" maxzoom="12" strokeWidth="3.5:3.5"/>
+			<apply_if minzoom="13" maxzoom="13" strokeWidth="4.5:4.5"/>
+			<apply_if minzoom="14" maxzoom="14" strokeWidth="6:6"/>
+			<apply_if minzoom="15" maxzoom="15" strokeWidth="8:8"/>
+			<apply_if minzoom="16" maxzoom="16" strokeWidth="10:10"/>
+			<apply_if minzoom="17" maxzoom="17" strokeWidth="11:11"/>
+			<apply_if minzoom="18" strokeWidth="13:13"/>
+			<apply_if hikingRoutesOSMC="walkingRoutesScopeOSMC" color="$null"/>
+		</switch>
+		<switch hikingRoutesOSMC="walkingRoutesScopeOSMC" cap="ROUND">
+			<case minzoom="12" tag="network_iwn" value="" color="$iwnColor">
+				<apply_if maxzoom="12" strokeWidth="6"/>
+				<apply_if minzoom="13" maxzoom="13" strokeWidth="8"/>
+				<apply_if minzoom="14" maxzoom="14" strokeWidth="10"/>
+				<apply_if minzoom="15" maxzoom="16" strokeWidth="12"/>
+				<apply_if minzoom="17" strokeWidth="14"/>
+			</case>
+			<case minzoom="12" tag="network_nwn" value="" color="$nwnColor">
+				<apply_if maxzoom="12" strokeWidth="3"/>
+				<apply_if minzoom="13" maxzoom="13" strokeWidth="4"/>
+				<apply_if minzoom="14" maxzoom="14" strokeWidth="7"/>
+				<apply_if minzoom="15" maxzoom="16" strokeWidth="9"/>
+				<apply_if minzoom="17" strokeWidth="11"/>
+			</case>
+			<case minzoom="13" tag="network_rwn" value="" color="$rwnColor">
+				<apply_if maxzoom="13" strokeWidth="3"/>
+				<apply_if minzoom="14" maxzoom="14" strokeWidth="5"/>
+				<apply_if minzoom="15" maxzoom="16" strokeWidth="7"/>
+				<apply_if minzoom="17" strokeWidth="9"/>
+			</case>
+			<case minzoom="13" tag="network_lwn" value="" color="$lwnColor">
+				<apply_if maxzoom="13" strokeWidth="1.5"/>
+				<apply_if minzoom="14" maxzoom="14" strokeWidth="2.8"/>
+				<apply_if minzoom="15" maxzoom="16" strokeWidth="3.5"/>
+				<apply_if minzoom="17" strokeWidth="5"/>
+			</case>
+		</switch>
+		<switch hikingRoutesOSMC="walkingRoutesScopeOSMC" color="#77ae27b3">
+			<case tag="route_hiking" value=""/>
+			<case tag="route_foot" value=""/>
+			<case tag="route_walking" value=""/>
+			<apply_if maxzoom="13" strokeWidth="1.5"/>
+			<apply_if minzoom="14" maxzoom="14" strokeWidth="2.8"/>
+			<apply_if minzoom="15" maxzoom="16" strokeWidth="3.5"/>
+			<apply_if minzoom="17" strokeWidth="5"/>
+		</switch>
+
+		<!--		<case tag="piste:type" value="" additional="route=piste" strokeWidth="3" color="#ae27b3"/>  This is not needed because we don't need to render piste routes in default style. But skimap.render.xml renders these routes. It allows to render osmc symbols. Only engine_v1 2017.05.30. -->
+
+		<!-- <switch minzoom="16">
+			<case tag="hazard" value=""/>
+			<apply>
+				<case maxzoom="16" strokeWidth="7:7" shadowRadius="3"/>
+				<case maxzoom="17" strokeWidth="8.5:8.5" shadowRadius="4"/>
+				<case maxzoom="18" strokeWidth="10:10" shadowRadius="5"/>
+				<case minzoom="19" strokeWidth="11.5:11.5" shadowRadius="6"/>
+			</apply>
+			<apply color="#99ffff00" shadowColor="#ff0000"/>
+		</switch>-->
+
+		<switch minzoom="8" strokeWidth="0.1" color="$null">
+			<case tag="natural" value="valley"/>
+		</switch>
+		<switch>
+			<case minzoom="14" tag="waterway" value="drystream"/>
+			<apply_if maxzoom="14" strokeWidth="2"/>
+			<apply_if minzoom="15" maxzoom="16" strokeWidth="3"/>
+			<apply_if minzoom="16" strokeWidth="4"/>
+			<apply color="#45666666">
+				<apply_if nightMode="true" color="#33aaaaaa"/>
+			</apply>
+		</switch>
+
+		<switch minzoom="13">
+			<case tag="natural" value="gorge"/>
+			<case tag="natural" value="couloir"/>
+			<apply strokeWidth="1" color="$null"/>
+		</switch>
+
+		<switch OSMMapperAssistant="true" minzoom="12">
+			<case tag="fixme_tag" value="yes" color="#aaf800e0"/>
+			<case tag="note_tag" value="yes" color="$null"/>
+			<apply>
+				<case maxzoom="14" strokeWidth="4:4"/>
+				<case maxzoom="15" strokeWidth="6:6"/>
+				<case maxzoom="16" strokeWidth="8:8"/>
+				<case maxzoom="17" strokeWidth="10:10"/>
+				<case maxzoom="18" strokeWidth="12:12"/>
+				<case minzoom="19" strokeWidth="14:14"/>
+			</apply>
+		</switch>
+
+		<switch streetLighting="true" minzoom="10" cap="ROUND">
+			<switch>
+				<case tag="lit" value="yes" color="$litYesColor"/>
+				<case tag="lit" value="no" color="$litNoColor"/>
+				<case tag="lit" value="interval" color="$litYesColor" cap="BUTT">
+					<case maxzoom="12" pathEffect="8_6"/>
+					<case maxzoom="14" pathEffect="12_8"/>
+					<case maxzoom="16" pathEffect="19_12"/>
+					<case minzoom="17" pathEffect="29_16"/>
+				</case>
+				<apply>
+					<case maxzoom="11" strokeWidth="4:4"/>
+					<case maxzoom="12" strokeWidth="5:5"/>
+					<case maxzoom="13" strokeWidth="7:7"/>
+					<case maxzoom="14" strokeWidth="10:10"/>
+					<case maxzoom="15" strokeWidth="13:13"/>
+					<case maxzoom="16" strokeWidth="16:16"/>
+					<case maxzoom="17" strokeWidth="25:25"/>
+					<case maxzoom="18" strokeWidth="34:34"/>
+					<case minzoom="19" strokeWidth="40:40"/>
+				</apply>
+			</switch>
+			<switch minzoom="17">
+				<case tag="lit_pedestrian_layer-1" value="interval" color="$litYesColor" pathEffect="6_3"/>
+				<case tag="lit_pedestrian_layer-1" value="yes" color="$litYesColor" pathEffect="15_7"/>
+				<case tag="lit_pedestrian_layer-1" value="no" color="$litNoColor" pathEffect="15_7"/>
+				<apply cap="BUTT" strokeWidth="9:9"/>
+			</switch>
+		</switch>
+
+		<case moreDetailed="true" minzoom="17" tag="building:part" value="" strokeWidth="0.5" color="#999999">
+			<apply_if nightMode="true" color="#808080"/>
+		</case>
+
+    <!-- Admin levels (boundaries) -->
+		<switch minzoom="2">
+			<!-- does admin_level=0 exist?? -->
+			<case tag="admin_level" value="0"/>
+			<case tag="admin_level" value="1"/>
+			<case tag="admin_level" value="2"/>
+			<apply color="$boundaryColorOuter" color_0="$boundaryColorInner">
+				<case maxzoom="2" strokeWidth="0.7"/>
+				<case maxzoom="3" strokeWidth="0.9" strokeWidth_0="0.8"/>
+				<case maxzoom="4" strokeWidth="1:1" strokeWidth_0="0.8"/>
+				<case maxzoom="5" strokeWidth="2:2" strokeWidth_0="1"/>
+				<case maxzoom="6" strokeWidth="3:3" strokeWidth_0="1"/>
+				<case maxzoom="8" strokeWidth="4:4" strokeWidth_0="1:1"/>
+				<case minzoom="9" strokeWidth="6:6" strokeWidth_0="1:1"/>
+			</apply>
+		</switch>
+
+		<switch minzoom="4">
+			<case tag="admin_level" value="3" pathEffect="6_1"/>
+			<case noAdminboundaries="false" tag="admin_level" value="4" pathEffect="6_1"/>
+			<apply color_0="$boundaryColorInner">
+				<case engine_v1="true" maxzoom="5" strokeWidth="1" strokeWidth_0="0.4"/>
+				<case engine_v1="false" maxzoom="5" strokeWidth="0.7" strokeWidth_0="0.3"/>
+				<case maxzoom="6" strokeWidth="1:1" strokeWidth_0="0.5"/>
+				<case maxzoom="8" strokeWidth="2:2" strokeWidth_0="1"/>
+				<case minzoom="9" strokeWidth="3.5:3.5" strokeWidth_0="1"/>
+			</apply>
+		</switch>
+
+		<switch noAdminboundaries="false">
+			<switch>
+				<case tag="admin_level" value="5" minzoom="11" pathEffect="6_3_2_3_2_3" pathEffect_0="6_3_2_3_2_3"/>
+				<case tag="admin_level" value="6" minzoom="11" pathEffect="6_3_2_3" pathEffect_0="6_3_2_3"/>
+				<case tag="admin_level" value="7" minzoom="12" pathEffect="5_1" pathEffect_0="5_1"/>
+				<case tag="admin_level" value="8" minzoom="12" pathEffect="5_1" pathEffect_0="5_1"/>
+				<case tag="admin_level" value="9" minzoom="13" pathEffect="4_1" pathEffect_0="4_1"/>
+				<case tag="admin_level" value="10" minzoom="13" pathEffect="4_1" pathEffect_0="4_1"/>
+				<apply color="$boundaryColorOuter" color_0="$boundaryColorInner" strokeWidth="3:3" strokeWidth_0="0.6"/>
+			</switch>
+			<case tag="boundary" value="national_park" minzoom="7">
+				<case maxzoom="9" strokeWidth="1.5:1.5"/>
+				<case minzoom="10" strokeWidth="3:3"/>
+				<apply color="$boundaryNationalParkColor2" color_0="$boundaryNationalParkColor" strokeWidth_0="0.6" pathEffect="4_1" pathEffect_0="4_1"/>
+			</case>
+		</switch>
+		<case minzoom="8" tag="boundary" value="protected_area" color="#4400ae3d">
+			<apply>
+				<case maxzoom="13" strokeWidth="2:2" pathEffect="10_5"/>
+				<case minzoom="14" strokeWidth="3.5:3.5" pathEffect="13_8"/>
+			</apply>
+		</case>
+		<case showLez="true" minzoom="11" tag="boundary" value="low_emission_zone" color="#9900ae3d"/>
+		<!-- <case tag="indoor" value="wall" color="#777777" strokeWidth="2"/>
+		<case minzoom="19" tag="door" value="hinged" color="#ffffff" strokeWidth="7"/>-->
+		<case tag="osmand_change" value="delete"/> <!-- OSM Live will break if delete -->
+	</line>
+</renderingStyle>
