@@ -1971,7 +1971,7 @@
 		<case tag="highway" value="pedestrian" attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
 		<case tag="highway" value="road" attrStringValue="highway_class_undefined"/>
 		<case tag="highway" value="footway"  attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
-		<case tag="highway" value="bridleway" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
+		<case tag="highway" value="bridlewayx" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
 		<case tag="highway" value="steps" attrColorValue="$footwayColor" attrStringValue="highway_class_steps"/>
 		<case tag="highway" value="path" attrColorValue="$pathColor" attrStringValue="highway_class_path"/>
 		<case tag="highway" value="cycleway" attrColorValue="$cyclewayColor" attrStringValue="highway_class_cycleway"/>
@@ -3365,7 +3365,7 @@
 								</apply_if>
 								<apply_if additional="footway=crossing" order="85"/>
 							</case>
-							<case tag="highway" value="bridleway" order="53">
+							<case tag="highway" value="bridlewayx" order="53">
 								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
 							</case>
 							<apply_if layer="1" maxzoom="15" order="20"/>
@@ -5481,8 +5481,8 @@
 						<case tag="highway" value="cycleway" nameTag="ref" textOrder="196"/>
 						<case tag="highway" value="path" nameTag="" textOrder="193"/>
 						<case tag="highway" value="path" nameTag="ref" textOrder="193"/>
-						<case tag="highway" value="bridleway" nameTag="" textOrder="195"/>
-						<case tag="highway" value="bridleway" nameTag="ref" textOrder="195"/>
+						<case tag="highway" value="bridlewayx" nameTag="" textOrder="195"/>
+						<case tag="highway" value="bridlewayx" nameTag="ref" textOrder="195"/>
 						<case tag="highway" value="via_ferrata"/>
 						<apply>
 							<case nameTag="" nameTag2="ref"/>
@@ -10920,7 +10920,7 @@
 						<apply_if additional="conveying=yes" pathEffect_5="2_1"/>
 					</case>
 
-					<case minzoom="12" tag="highway" value="bridleway">
+					<case minzoom="12" tag="highway" value="bridlewayx">
 						<case baseAppMode="pedestrian" minzoom="15" strokeWidth_4="1.4:1.4" strokeWidth_5="1:1"/>
 						<case horseRoutes="true" maxzoom="15">
 							<case maxzoom="12" strokeWidth_4="1.5" strokeWidth_5="1.3"/>
