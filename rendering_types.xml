@@ -140,7 +140,14 @@
 	<type tag="foot" value="permissive" minzoom="13" additional="true" poi="false"/>
 	<type tag="foot" value="destination" minzoom="13" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="highway" from_value="path" if_tag1="foot" if_value1="designated" to_tag1="highway" to_value1="footway"/>
+	<!-- tag transforms to path -->
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="bridleway" to_tag1="highway" to_value1="path"/>
+	<!-- tag transforms for public bridleways -->
 	<entity_convert pattern="tag_transform" from_tag="highway" from_value="bridleway" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaynarrow"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="cycleway" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaynarrow"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="path" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaynarrow"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="service" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaywide"/>
+	<entity_convert pattern="tag_transform" from_tag="highway" from_value="road" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaywide"/>
 	<entity_convert pattern="tag_transform" from_tag="highway" from_value="track" if_tag1="designation" if_value1="public_bridleway" to_tag1="highway" to_value1="bridlewaywide"/>
 	<type tag="foot" value="customers" minzoom="13" additional="true" poi="false"/>
 	<type tag="bicycle" value="no" minzoom="13" additional="true" poi="false"/>
