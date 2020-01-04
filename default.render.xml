@@ -488,7 +488,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#a01060">
 			<apply_if nightMode="true" attrColorValue="#a01060"/>
 		</case>
-		<case attrColorValue="#dd9f9f">
+		<case attrColorValue="#f27349">
 			<apply_if nightMode="true" attrColorValue="#af574f"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -547,7 +547,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#c00828">
 			<apply_if nightMode="true" attrColorValue="#c00828"/>
 		</case>
-		<case attrColorValue="#dd9f9f">
+		<case attrColorValue="#ffa347">
 			<apply_if nightMode="true" attrColorValue="#b88165"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -597,7 +597,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#ff8000">
 			<apply_if nightMode="true" attrColorValue="#ff8000"/>
 		</case>
-		<case attrColorValue="#f9d6aa">
+		<case attrColorValue="#f5e85b">
 			<apply_if nightMode="true" attrColorValue="#CCB77A"/>
 		</case>
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
@@ -645,7 +645,7 @@
 		<case roadStyle="highContrastRoads" attrColorValue="#f0c810">
 			<apply_if nightMode="true" attrColorValue="#f0c810"/>
 		</case>
-		<case attrColorValue="#f8f8ba">
+		<case attrColorValue="#ffffff">
 			<apply_if additional="construction=yes" attrColorValue="#D6CF2A"/>
 			<apply_if nightMode="true" attrColorValue="#37555c"/>
 		</case>
@@ -718,7 +718,7 @@
 		<case roadStyle="boldOutline" attrColorValue="#99666666">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#ffffff">
+		<case attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -993,8 +993,8 @@
 		</case>
 	</renderingAttribute>
 	<renderingAttribute name="pathColor">
-		<case attrColorValue="#33000000">
-			<apply_if nightMode="true" attrColorValue="#26ffffff"/>
+		<case attrColorValue="$footwayColor">
+			<apply_if nightMode="true" attrColorValue="$footwayColor"/>
 		</case>
 	</renderingAttribute>
 	<renderingConstant name="pathStrokeWidth" value="1.5"/>
@@ -1010,7 +1010,7 @@
 	<renderingConstant name="sacScaleColorT5" value="#6000ff"/>
 	<renderingConstant name="sacScaleColorT6" value="#6000ff"/>
 	<renderingAttribute name="bridlewayColor">
-		<case attrColorValue="#0080FF">
+		<case attrColorValue="#339900">
 			<apply_if nightMode="true" attrColorValue="#339900"/>
 		</case>
 	</renderingAttribute>
@@ -1517,7 +1517,7 @@
 	<renderingAttribute name="farmyardColor">
 		<case nightMode="true" attrColorValue="#004333"/>
 		<case moreDetailed="true" attrColorValue="#E4D0B3"/>
-		<case attrColorValue="#EFD6B5"/>
+		<case attrColorValue="#ddbf92"/>
 	</renderingAttribute>
 	<renderingAttribute name="greenfieldColor">
 		<case moreDetailed="true" attrColorValue="#BDC88C"/>
@@ -1532,7 +1532,7 @@
 		<case attrColorValue="#94d77b"/>
 	</renderingAttribute>
 	<renderingAttribute name="heathColor">
-		<case attrColorValue="#E6E8C5"/>
+		<case attrColorValue="#d7ebba"/>
 	</renderingAttribute>
 	<renderingAttribute name="meadowColor">
 		<case nightMode="true" attrColorValue="$woodColor"/>
@@ -1968,13 +1968,11 @@
 		<case tag="highway" value="residential" attrColorValue="#C1B9D1" attrStringValue="highway_class_street"/>
 		<case tag="highway" value="living_street" attrColorValue="#C1B9D1" attrStringValue="highway_class_street"/>
 		<case tag="highway" value="service" attrColorValue="#E3DAF6" attrStringValue="highway_class_service"/>
-		<case tag="highway" value="pedestrian" attrColorValue="$pathColor" attrStringValue="highway_class_footway"/>
+		<case tag="highway" value="pedestrian" attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
 		<case tag="highway" value="road" attrStringValue="highway_class_undefined"/>
-		<case tag="highway" value="footway"  attrColorValue="$pathColor" attrStringValue="highway_class_footway"/>
-		<case tag="highway" value="bridleway" attrColorValue="$pathColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="bridlewaynarrow" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="bridlewaywide" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
-		<case tag="highway" value="steps" attrColorValue="$pathColor" attrStringValue="highway_class_steps"/>
+		<case tag="highway" value="footway"  attrColorValue="$footwayColor" attrStringValue="highway_class_footway"/>
+		<case tag="highway" value="bridleway" attrColorValue="$bridlewayColor" attrStringValue="highway_class_bridleway"/>
+		<case tag="highway" value="steps" attrColorValue="$footwayColor" attrStringValue="highway_class_steps"/>
 		<case tag="highway" value="path" attrColorValue="$pathColor" attrStringValue="highway_class_path"/>
 		<case tag="highway" value="cycleway" attrColorValue="$cyclewayColor" attrStringValue="highway_class_cycleway"/>
 	</renderingAttribute>
@@ -3368,12 +3366,6 @@
 								<apply_if additional="footway=crossing" order="85"/>
 							</case>
 							<case tag="highway" value="bridleway" order="53">
-								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
-							</case>
-							<case tag="highway" value="bridlewaynarrow" order="53">
-								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
-							</case>
-							<case tag="highway" value="bridlewaywide" order="53">
 								<apply_if minzoom="14" baseAppMode="pedestrian" order="87"/>
 							</case>
 							<apply_if layer="1" maxzoom="15" order="20"/>
@@ -5491,10 +5483,6 @@
 						<case tag="highway" value="path" nameTag="ref" textOrder="193"/>
 						<case tag="highway" value="bridleway" nameTag="" textOrder="195"/>
 						<case tag="highway" value="bridleway" nameTag="ref" textOrder="195"/>
-						<case tag="highway" value="bridlewaynarrow" nameTag="" textOrder="195"/>
-						<case tag="highway" value="bridlewaynarrow" nameTag="ref" textOrder="195"/>
-						<case tag="highway" value="bridlewaywide" nameTag="" textOrder="195"/>
-						<case tag="highway" value="bridlewaywide" nameTag="ref" textOrder="195"/>
 						<case tag="highway" value="via_ferrata"/>
 						<apply>
 							<case nameTag="" nameTag2="ref"/>
@@ -10361,7 +10349,7 @@
 			</apply_if>
 		</switch>
 
-		<case minzoom="15" tag="highway" value="footway" additional="footway=crossing" strokeWidth="0.1" color_5="$pathColor"> <!-- this code is here because we do not want surfaces,surfaceGrade and access on crossings -->
+		<case minzoom="15" tag="highway" value="footway" additional="footway=crossing" strokeWidth="0.1" color_5="$footwayColor"> <!-- this code is here because we do not want surfaces,surfaceGrade and access on crossings -->
 			<case maxzoom="16" strokeWidth_5="0.5"/>
 			<case maxzoom="17" strokeWidth_5="1"/>
 			<case minzoom="18" color="#ffffff" color__1="#77555555">
@@ -10889,7 +10877,7 @@
 						</apply_if>
 					</case>
 
-					<case minzoom="12" tag="highway" value="footway" color_5="$pathColor">
+					<case minzoom="12" tag="highway" value="footway" color_5="$footwayColor">
 						<case baseAppMode="bicycle" minzoom="14" additional="bicycle=designated" color_5="$cyclewayColor" pathEffect_5="4_2" strokeWidth_5="1:1"/>
 						<switch minzoom="12" maxzoom="15">
 							<case moreDetailed="true">
@@ -10928,7 +10916,7 @@
 						</case>
 						<case maxzoom="15" disable="true"/>
 						<case minzoom="16" strokeWidth_4="2:2" strokeWidth_5="2:2"/>
-						<apply color_5="$pathColor" pathEffect_5="1_2"/>
+						<apply color_5="$footwayColor" pathEffect_5="1_2"/>
 						<apply_if additional="conveying=yes" pathEffect_5="2_1"/>
 					</case>
 
@@ -10943,42 +10931,6 @@
 							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
 						</case>
 						<case minzoom="16" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
-							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
-						</case>
-						<apply color_5="$pathColor" pathEffect_5="4_2"/>
-					</case>
-
-					<case minzoom="12" tag="highway" value="bridlewaynarrow">
-						<case baseAppMode="pedestrian" minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1:1"/>
-						<case horseRoutes="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="1.5" strokeWidth_5="1.3"/>
-							<case minzoom="13" strokeWidth_4="1.8:1.8" strokeWidth_5="1.7"/>
-						</case>
-						<case moreDetailed="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="0.9" strokeWidth_5="0.8"/>
-							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
-						</case>
-						<case minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
-							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
-							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
-						</case>
-						<apply color_5="$bridlewayColor" pathEffect_5="4_2"/>
-					</case>
-
-					<case minzoom="12" tag="highway" value="bridlewaywide">
-						<case baseAppMode="pedestrian" minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1:1"/>
-						<case horseRoutes="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="1.5" strokeWidth_5="1.3"/>
-							<case minzoom="13" strokeWidth_4="1.8:1.8" strokeWidth_5="1.7"/>
-						</case>
-						<case moreDetailed="true" maxzoom="14">
-							<case maxzoom="12" strokeWidth_4="0.9" strokeWidth_5="0.8"/>
-							<case minzoom="13" strokeWidth_4="1.2:1.2" strokeWidth_5="1"/>
-						</case>
-						<case minzoom="14" strokeWidth_4="1.4:1.4" strokeWidth_5="1">
 							<apply_if showSurfaceGrade="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
 							<apply_if showSurfaces="true" strokeWidth_5="$trackWithSurfaceStrokeWidth"/>
 							<apply_if horseRoutes="true" strokeWidth_4="3:3" strokeWidth_5="1.5:1.5"/>
@@ -12345,4 +12297,3 @@
 		<case tag="osmand_change" value="delete"/> <!-- OSM Live will break if delete -->
 	</line>
 </renderingStyle>
-
